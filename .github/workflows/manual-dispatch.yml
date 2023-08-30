@@ -1,0 +1,21 @@
+name: Manual Dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: "The tags to print"
+        required: true
+        default: "v1.0.0"
+      print_tags:
+        description: "Whether to print the tags"
+        required: true
+        type: boolean
+        default: true
+
+jobs:
+  print-tag:
+    runs-on: ubuntu-latest
+    if: ${{ inputs.print_tags }}
+    steps:
+      - name: Print the input tag to STDOUT
+        run: echo  The tags are ${{ inputs.tags }}
