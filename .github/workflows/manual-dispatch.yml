@@ -11,6 +11,11 @@ on:
         required: true
         type: boolean
         default: true
+      foo:
+        description: "Foo"
+        required: true
+        type: boolean
+        default: true
 
 jobs:
   print-tag:
